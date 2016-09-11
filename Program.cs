@@ -42,7 +42,9 @@ namespace FortuneTeller
                 quitCommand = userFirstName.ToUpper();
                 if (quitCommand == "QUIT")
                 {
-                    return;
+                    Console.WriteLine("Nobody likes a quitter.");
+                    Console.ReadKey();
+                    Environment.Exit(0); ;
                 }
 
                 Console.WriteLine("\nWhat is your last name?");
@@ -50,22 +52,25 @@ namespace FortuneTeller
                 quitCommand = userLastName.ToUpper();
                 if (quitCommand == "QUIT")
                 {
-                    return;
+                    Console.WriteLine("Nobody likes a quitter.");
+                    Console.ReadKey();
+                    Environment.Exit(0); ;
                 }
 
                 Console.WriteLine("\nWhat is your age?");
                 quitCommand = Console.ReadLine();
                 quitCommand = quitCommand.ToUpper();
-                
+
                 if (quitCommand == "QUIT")
                 {
-                    
-                    return;
+                    Console.WriteLine("Nobody likes a quitter.");
+                    Console.ReadKey();
+                    Environment.Exit(0);
                 }
-                else
-                {
-                    userAge = int.Parse(quitCommand);
-                }
+
+
+                userAge = int.Parse(quitCommand);
+
 
                 if ((userAge < 10) && (userAge >= 0))
                 {
@@ -75,12 +80,12 @@ namespace FortuneTeller
                 {
                     Console.WriteLine("I'm begining to think you are not being 100% truthfull.");
                 }
-                else 
+                else
                 {
 
                 }
-      
-                    
+
+
 
 
                 Console.WriteLine("\nWhat is your birth month (as a number)?");
@@ -90,30 +95,17 @@ namespace FortuneTeller
                 if (quitCommand == "QUIT")
                 {
 
-                    return;
+                    Console.WriteLine("Nobody likes a quitter.");
+                    Console.ReadKey();
+                    Environment.Exit(0);
                 }
-                else
+
+                userBirthMonth = int.Parse(quitCommand);
+                if ((userBirthMonth < 1) || (userBirthMonth > 12))
                 {
-                    userBirthMonth = int.Parse(quitCommand);
-                    if ((userBirthMonth < 1) || (userBirthMonth > 12))
-                    {
-                        Console.WriteLine("\"" + userBirthMonth + "\"" + space + "really?");
-                    }
+                    Console.WriteLine("\"" + userBirthMonth + "\"" + space + "really?");
                 }
 
-                //formatting the name output
-
-                userNameFirstLetter = userFirstName.Substring(0, 1);
-                userNameFirstLetter = userNameFirstLetter.ToUpper();
-                userNameRemainLetters = userFirstName.Remove(0, 1);
-                userNameRemainLetters = userNameRemainLetters.ToLower();
-                userFirstName = userNameFirstLetter + userNameRemainLetters;
-
-                userNameFirstLetter = userLastName.Substring(0, 1);
-                userNameFirstLetter = userNameFirstLetter.ToUpper();
-                userNameRemainLetters = userLastName.Remove(0, 1);
-                userNameRemainLetters = userNameRemainLetters.ToLower();
-                userLastName = userNameFirstLetter + userNameRemainLetters;
 
                 //color data manipulation
                 Console.WriteLine("\nWhat is your favorite ROYGBIV color (enter \"Help\" for the list of colors)?");
@@ -150,10 +142,10 @@ namespace FortuneTeller
                         quitCommand = colorTest;
                         if (quitCommand == "QUIT")
                         {
-
-                            return;
+                            Console.WriteLine("Nobody likes a quitter.");
+                            Console.ReadKey();
+                            Environment.Exit(0);
                         }
-
                     }
                 }
 
@@ -164,19 +156,33 @@ namespace FortuneTeller
 
                 if (quitCommand == "QUIT")
                 {
+                    Console.WriteLine("Nobody likes a quitter.");
+                    Console.ReadKey();
+                    Environment.Exit(0);
+                }
 
-                    return;
-                }
-                else
+                userSiblings = int.Parse(quitCommand);
+                if (userSiblings < 0)
                 {
-                    userSiblings = int.Parse(quitCommand);
-                    if (userSiblings < 0)
-                    {
-                        Console.WriteLine("Now that's just not true");
-                    }
+                    Console.WriteLine("Now that's just not true");
                 }
+
 
                 //Manipulating user inputed data
+
+                //formatting the name output
+
+                userNameFirstLetter = userFirstName.Substring(0, 1);
+                userNameFirstLetter = userNameFirstLetter.ToUpper();
+                userNameRemainLetters = userFirstName.Remove(0, 1);
+                userNameRemainLetters = userNameRemainLetters.ToLower();
+                userFirstName = userNameFirstLetter + userNameRemainLetters;
+
+                userNameFirstLetter = userLastName.Substring(0, 1);
+                userNameFirstLetter = userNameFirstLetter.ToUpper();
+                userNameRemainLetters = userLastName.Remove(0, 1);
+                userNameRemainLetters = userNameRemainLetters.ToLower();
+                userLastName = userNameFirstLetter + userNameRemainLetters;
 
                 //User age even/odd calculation and years till retirement assignment
                 if ((userAge < 125) && (userAge >= 0))
@@ -201,9 +207,9 @@ namespace FortuneTeller
                         numberOfYears = oddRetYear + 100;
                     }
                 }
-                
-                
-               
+
+
+
 
                 //Number of siblings relation to location of vacation home
                 if (userSiblings == 0)
@@ -277,8 +283,8 @@ namespace FortuneTeller
                 //Console.WriteLine(amountOfMoney.ToString("#,###,###.00"));
                 //Fortune print out
                 Console.WriteLine("\n************************************");
-                Console.WriteLine(userFirstName + space + userLastName + space + "will retire in" + space + (numberOfYears.ToString("#,###")) + 
-                    space + "years" + space + "with" + space + "$" + (amountOfMoney.ToString("#,###,###.00")) + space + "in the bank, \na vacation home in" 
+                Console.WriteLine(userFirstName + space + userLastName + space + "will retire in" + space + (numberOfYears.ToString("#,###")) +
+                    space + "years" + space + "with" + space + "$" + (amountOfMoney.ToString("#,###,###.00")) + space + "in the bank, \na vacation home in"
                     + space + userVacLoc + space + "and a" + modeOfTransportation + ".");
                 Console.WriteLine("************************************\n\n");
 
@@ -296,13 +302,14 @@ namespace FortuneTeller
                     if (quitCommand == "QUIT")
                     {
 
-                        return;
+                        Console.WriteLine("Nobody likes a quitter.");
+                        Console.ReadKey();
+                        Environment.Exit(0);
                     }
-                    else
-                    {
-                        menuCommand = int.Parse(quitCommand);
-                    }
-                    
+
+                    menuCommand = int.Parse(quitCommand);
+
+
                     if (menuCommand == 1)
                     {
                         Console.WriteLine("\n\n\n");
